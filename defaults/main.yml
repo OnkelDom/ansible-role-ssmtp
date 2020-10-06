@@ -1,0 +1,7 @@
+---
+proxy_env: {}
+ssmtp_config:
+  root: postmaster
+  mailhub: mail
+  TLS_CA_File: /etc/pki/tls/certs/ca-bundle.crt
+ssmtp_aliases: []

@@ -1,0 +1,13 @@
+{{ ansible_managed | comment }}
+
+{% for key, value in ssmtp_config.items()|sort %}
+{%   if value is sameas true %}
+{{ key }}
+{%   elif value is string or value is number %}
+{{ key }}={{ value }}
+{%   else %}
+{%     for v in value %}
+{{ key }}={{ v }}
+{%     endfor %}
+{%   endif %}
+{% endfor %}

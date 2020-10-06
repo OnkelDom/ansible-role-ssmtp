@@ -1,0 +1,6 @@
+{{ ansible_managed | comment }}
+
+root:{{ ssmtp_config.root }}:{{ ssmtp_config.mailhub }}
+{% if ssmtp_aliases | length > 0 %}
+{% for key in ssmtp_aliases %}{{ key.name }}:{{ key.mail }}:{{ key.hub }}{% endfor %}
+{% endif %}
